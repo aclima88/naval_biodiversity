@@ -1,6 +1,35 @@
 // Define the URL for the JSON data
 const dataURL = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
+
+// Initial function to load data and create the default chart
+function init() {
+    d3.json(dataURL)
+      .then((data) => {
+        const dropdown = d3.select("#selDataset");
+  
+        // Populate the dropdown with options
+        dropdown
+          .selectAll("option")
+          .data(data.names)
+          .enter()
+          .append("option")
+          .text((name) => name)
+          .property("value", (name) => name);
+  
+        // Set a default option
+        dropdown.property("value", data.names[0]);
+  
+        // Load and display data for the first individual
+        optionChanged(data.names[0]);
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      });
+  }
+  
+
+
 // Function to display sample metadata
 function displaySampleMetadata(metadata) {
   const metadataDiv = d3.select("#sample-metadata");
@@ -130,31 +159,6 @@ function optionChanged(selectedValue) {
   }
   
 
-// Initial function to load data and create the default chart
-function init() {
-  d3.json(dataURL)
-    .then((data) => {
-      const dropdown = d3.select("#selDataset");
-
-      // Populate the dropdown with options
-      dropdown
-        .selectAll("option")
-        .data(data.names)
-        .enter()
-        .append("option")
-        .text((name) => name)
-        .property("value", (name) => name);
-
-      // Set a default option
-      dropdown.property("value", data.names[0]);
-
-      // Load and display data for the first individual
-      optionChanged(data.names[0]);
-    })
-    .catch((error) => {
-      console.error("Error loading data:", error);
-    });
-}
 
 // Initialize the web page
 init();
