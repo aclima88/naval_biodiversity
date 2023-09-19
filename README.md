@@ -1,28 +1,31 @@
-# naval_biodiversity
+# Naval Biodiversity Dashboard
 
-// Define the URL for the JSON data
+1. Defined the URL for the JSON data.
 
-// Initial function to load data and create the default chart
+2. Created initial function to load data from the JSON and create the default chart with a drop down menu.
 
-// Function to display sample metadata
+3. Created a function to display sample metadata.
 
+4. Created a function to handle the dropdown menu change.
 
-// Function to create the bar chart
+<img width="127" alt="dropdown_menu" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/8d12799b-27dd-41ea-8fda-e5482d1a10e3">
 
-//Function to create the gauge chart
+5. Created a function to create and display the bar chart.
 
-    // Get the washing frequency (wfreq) from the metadata
+<img width="437" alt="bar_chart" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/33099ddb-e5c2-4369-9a20-6fb339517a5e">
+
+6. Created a function to create and display the gauge chart.
+
+    a. Get the washing frequency (wfreq) from the metadata.
    
+    b. Create the trace for the gauge chart.
     
-    // Create the trace for the gauge chart
+<img width="570" alt="gauge_chart" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/43dbc0a9-010b-48e0-a44a-ef0567456524">
     
+8. Created a function to create and display the bubble chart.
 
-// Function to create the bubble chart
-  
+<img width="1084" alt="bubble_chart" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/a09995f9-2c41-4180-8880-c5707814e3bc">
 
-// Function to handle dropdown menu change
+9. Initialize the web page.
 
-
-
-// Initialize the web page
-init();
+<img width="827" alt="dashboard" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/45c65d25-83eb-42cd-aaa7-207c9df15118">

@@ -27,8 +27,6 @@ function init() {
         console.error("Error loading data:", error);
       });
   }
-  
-
 
 // Function to display sample metadata
 function displaySampleMetadata(metadata) {
@@ -39,6 +37,25 @@ function displaySampleMetadata(metadata) {
   Object.entries(metadata).forEach(([key, value]) => {
     metadataDiv.append("p").text(`${key}: ${value}`);
   });
+}
+
+// Function to handle dropdown menu change
+function optionChanged(selectedValue) {
+  d3.json(dataURL)
+    .then((data) => {
+      const individualData = data.samples.find((sample) => sample.id === selectedValue);
+      const metadata = data.metadata.find((meta) => meta.id.toString() === selectedValue);
+
+      console.log("Metadata:", metadata);
+      
+      displaySampleMetadata(metadata);
+      createBarChart(individualData);
+      createBubbleChart(individualData);
+      createGaugeChart(metadata);
+    })
+    .catch((error) => {
+      console.error("Error loading data:", error);
+    });
 }
 
 // Function to create the bar chart
@@ -108,9 +125,6 @@ function createGaugeChart(metadata) {
     
     Plotly.newPlot("gauge", gaugeChartData, gaugeChartLayout);
     }
-      
-
-
 
 // Function to create the bubble chart
 function createBubbleChart(sampleData) {
@@ -136,29 +150,7 @@ function createBubbleChart(sampleData) {
   };
 
   Plotly.newPlot("bubble", bubbleChartData, bubbleChartLayout);
-}
-  
-
-// Function to handle dropdown menu change
-function optionChanged(selectedValue) {
-    d3.json(dataURL)
-      .then((data) => {
-        const individualData = data.samples.find((sample) => sample.id === selectedValue);
-        const metadata = data.metadata.find((meta) => meta.id.toString() === selectedValue);
-  
-        console.log("Metadata:", metadata);  // Log the metadata
-  
-        displaySampleMetadata(metadata);
-        createBarChart(individualData);
-        createBubbleChart(individualData);
-        createGaugeChart(metadata);
-      })
-      .catch((error) => {
-        console.error("Error loading data:", error);
-      });
-  }
-  
-
+} 
 
 // Initialize the web page
 init();
