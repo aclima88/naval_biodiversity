@@ -26,6 +26,10 @@
 
 <img width="1084" alt="bubble_chart" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/a09995f9-2c41-4180-8880-c5707814e3bc">
 
+
 9. Initialize the web page.
 
 <img width="827" alt="dashboard" src="https://github.com/aclima88/naval_biodiversity/assets/133547307/45c65d25-83eb-42cd-aaa7-207c9df15118">
+
+10. Created the external page to host the dashboard.
+https://aclima88.github.io/naval_biodiversity/ 
