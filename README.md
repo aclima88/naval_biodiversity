@@ -33,3 +33,8 @@
 
 10. Created the external page to host the dashboard.
 https://aclima88.github.io/naval_biodiversity/ 
+
+
+**Notes**
+
+I worked with Bryant Grissel on the challange and I used chatGPT and Google bard for help with syntax and troubleshooting.
